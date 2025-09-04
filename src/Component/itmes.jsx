@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import cartIcon from "../assets/images/icon-add-to-cart.svg";
+import cartIcon from "/images/icon-add-to-cart.svg";
 import { addtoCart } from "../Store/CartSlice";
 
 function Items({ product }) {

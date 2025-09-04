@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import CartItem  from "./cartItems";
-import confirmed from "../assets/images/icon-order-confirmed.svg";
+import confirmed from "/images/icon-order-confirmed.svg";
 
 function OrderConfirmed({ items = [] }) {
     const totalItems = items.reduce((total, item) => total + item.quantity, 0);

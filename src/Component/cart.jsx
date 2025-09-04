@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import iconCart from "../assets/images/icon-add-to-cart.svg";
-import empty from "../assets/images/illustration-empty-cart.svg";
+import iconCart from "/images/icon-add-to-cart.svg";
+import empty from "/images/illustration-empty-cart.svg";
 import CartItem from "./cartItems";
 import { clearCart } from "../Store/CartSlice";
 import OrderConfirmed from "./orderConfirmed";

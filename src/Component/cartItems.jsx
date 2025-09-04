@@ -1,6 +1,6 @@
-import Minus from "../assets/images/icon-decrement-quantity.svg"
-import Add from "../assets/images/icon-increment-quantity.svg"
-import Remove from "../assets/images/icon-remove-item.svg"
+import Minus from "/images/icon-decrement-quantity.svg"
+import Add from "/images/icon-increment-quantity.svg"
+import Remove from "/images/icon-remove-item.svg"
 import { useDispatch } from "react-redux";
 import { removeFromCart, updateQuantity } from "../Store/CartSlice";
 function CartItem({item}) {

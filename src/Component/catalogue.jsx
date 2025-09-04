@@ -1,5 +1,5 @@
 import Items from "./itmes"
-import iconCart from "../assets/images/icon-add-to-cart.svg"
+import iconCart from "/images/icon-add-to-cart.svg"
 import { useSelector } from "react-redux";
 import FilterBar from "./Filter";
 import data from "../assets/data.json";
