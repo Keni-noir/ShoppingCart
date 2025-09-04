@@ -11,30 +11,34 @@ function Items({ product }) {
   };
 
   return (
-    <div className="items-center w-full" key={product.id}>
-      <picture className="relative">
+    <div className="flex flex-col items-start w-full">
+      {/* Responsive image handling */}
+      <picture className="relative w-full">
+        <source media="(min-width: 1024px)" srcSet={product.image.desktop} />
+        <source media="(min-width: 768px)" srcSet={product.image.tablet} />
+        <source media="(min-width: 480px)" srcSet={product.image.mobile} />
         <img
-          src={product.image.desktop}
+          src={product.image.thumbnail}
           alt={product.name}
-          className="hidden md:flex w-60 h-60 rounded-md mb-5 hover:border-2 hover:border-black"
+          className="w-full h-60 object-cover rounded-md mb-5 hover:border-2 hover:border-black"
         />
-        <img
-          src={product.image.mobile}
-          alt={product.name}
-          className="rounded-xl mb-5 md:hidden hover:border-2 hover:border-black"
-        />
+
+        {/* Add to Cart button overlay */}
         <button
           onClick={handleAddToCart}
-          className="cursor-pointer hover:bg-gray-300 absolute top-100 ml-65 md:top-55 md:ml-15 bg-white rounded-full py-2 px-4 border-1 border-black flex gap-1 text-sm"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white hover:bg-gray-200 rounded-full py-2 px-4 shadow-md border"
         >
-          <img src={cartIcon} alt="" />
-          Add to cart
+          <img src={cartIcon} alt="Add to cart" className="w-4 h-4" />
+          <span className="text-sm font-medium">Add to cart</span>
         </button>
       </picture>
 
-      <h2 className="text-md md:text-sm text-gray-700">{product.category}</h2>
-      <p className="text-xl md:text-md font-bold">{product.name}</p>
-      <span className="text-md md:text-sm font-semibold">${product.price}</span>
+      {/* Product details */}
+      <h2 className="text-sm text-gray-500">{product.category}</h2>
+      <p className="text-lg font-bold">{product.name}</p>
+      <span className="text-md font-semibold text-violet-600">
+        ${product.price}
+      </span>
     </div>
   );
 }

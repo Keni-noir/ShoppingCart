@@ -36,8 +36,8 @@ function Cart({ onConfirmOrder }) {
             )}
 
             {/* Main cart content, blurred when order is confirmed */}
-            <div className={`relative z-40 ${orderConfirmed ? "pointer-events-none blur-sm" : ""}`}>
-                <div className={`right-35 top-0 h-screen w-md bg-white shadow-2xl md:mt-25 rounded-2xl`}>
+            <div className={`relative z-40 w-full md:w-96 ${orderConfirmed ? "pointer-events-none blur-sm" : ""}`}>
+                <div className={`right-35 top-0 h-screen  bg-white shadow-2xl md:mt-25 rounded-2xl`}>
                     <div className="flex items-center justify-between p-6 border-b border-gray-200">
                         <h2 className="text-xl font-bold text-gray-900 flex items-center space-x-2">
                             <img src={iconCart} alt="Cart Icon" className="w-6 h-6" />

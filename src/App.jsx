@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className="container flex flex-col justify-between gap-7 w-7xl mx-auto  min-h-screen md:flex-row">
+       <div className="container flex flex-col md:flex-row justify-between gap-7 mx-auto px-4 sm:px-6 lg:px-8 min-h-screen">
         <Catalogue />
         <Cart onConfirmOrder={toggleConfirmOrder}/>
       </div>

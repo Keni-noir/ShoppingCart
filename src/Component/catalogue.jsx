@@ -22,27 +22,34 @@ function Catalogue(){
 
 
 return(
-    <div className="container flex flex-col w-7xl items-center justify-start h-fit md:items-start">
-        <div className="container fixed z-2 p-3 flex flex-col items-center justify-between space-y-5 md:flex-row w-7xl ">
-            <h1 className="text-4xl font-bold mb-4 justify-start">Desserts</h1>
-            <button  className=" relative cursor-pointer hover:bg-gray-200 rounded-xl px-4"><img src={iconCart} alt="Cart Icon" className="w-6 h-6 justify-end mb-5 mt-3"/>{totalItem  > 0 && (
-                <span className="absolute -top-2 right-2 bg-violet-500 text-white text-xs font-semibold rounded-full w-6 h-6">{totalItem}</span>)}</button>
-        </div>
-        <div className="mt-24 w-full">
-        <FilterBar
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onFilter={(cat) => {
-            setSelectedCategory(cat);
-          }}
-        />
-      </div>
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-            {filteredProducts.map((product) => (
-            <Items key={product.id} product={product} />
-        ))}
-      </div>
-    </div>
+    <div className="flex flex-col items-center md:items-start w-full">
+  <div className="sticky top-0 z-10 bg-white/90 backdrop-blur p-3 flex flex-col md:flex-row items-center justify-between gap-4 w-full">
+    <h1 className="text-2xl md:text-4xl font-bold">Desserts</h1>
+    <button className="relative cursor-pointer hover:bg-gray-200 rounded-xl px-4">
+      <img src={iconCart} alt="Cart Icon" className="w-6 h-6" />
+      {totalItem > 0 && (
+        <span className="absolute -top-2 right-2 bg-violet-500 text-white text-xs font-semibold rounded-full w-6 h-6 flex items-center justify-center">
+          {totalItem}
+        </span>
+      )}
+    </button>
+  </div>
+
+  <div className="mt-6 w-full">
+    <FilterBar
+      categories={categories}
+      selectedCategory={selectedCategory}
+      onFilter={(cat) => setSelectedCategory(cat)}
+    />
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6 w-full">
+    {filteredProducts.map((product) => (
+      <Items key={product.id} product={product} />
+    ))}
+  </div>
+</div>
+
 );
 }
 
